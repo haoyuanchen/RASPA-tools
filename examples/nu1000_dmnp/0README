@@ -1,0 +1,14 @@
+Files you need to prepare:
+
+1. dmnp.pdb (draw in Gaussview, save as PDB file)
+2. nu1000_modified.cif (change the label of the binding site atom to 'Z0')
+3. simulation.input (modify from simulation.input.template provided)
+
+Commands you need to run:
+
+1. run "python pdb2def.py dmnp.pdb 2 2.5" (2 is the index of the binding atom, 2.5 is the desired bond length)
+2. run "$RASPA_DIR/bin/simulate simulate.input" (no need to submit to the queue because it should be pretty fast)
+3. visualize the movies generated (by importing both Framework_0_final_x_x_x_P1.cif and Movie_xxx_x.x.x_xx_xx_allcomponents.pdb together into iRASPA), right click and save the CIFs (iRASPA saves all frames), pick one frame that has a good structure (hint: the final frames have better chances to be good)
+4. from the folder that the CIFs were saved, copy that frame you like to here (iRASPA makes a deeply nested folder, just dig in and find those files)
+5. run "python combine_cifs.py nu1000_modified.cif frame-99.cif"
+6. the final output is combined.cif, visualize it!
