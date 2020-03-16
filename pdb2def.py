@@ -80,7 +80,7 @@ for e in elems:
 f2.close()
 
 bindatom = atoms[bindidx-1][0]
-binddist = float(sys.argv[3])
+binddist = float(sys.argv[3])/1.122  # convert minima to sigma
 
 f3 = open('force_field.def','w')
 f3.write('# rules to overwrite\n0\n# number of defined interactions\n1\n# type      type2       interaction\n')  # hard-code with 1 for now
