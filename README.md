@@ -10,10 +10,10 @@ Different from Andrew's approach in MAI (which is for adsorbates with <=3 atoms,
 If the binding geometry doesn't look good, just re-run the simulation (maybe with more cycles, especially for bi-dentate binding). You can also try changing the temperature but I found that 100K (the default) is kind of optimal because at 298K it's too easy for non-binding configurations to be accepted. I tried 1K too but it'll just freeze at the initial configuration. You can also tune the epsilon of the special Lennard-Jones potential, but the default value (10000K) seems to be pretty good from trial and error.
 
 ## Prerequisites
-[Gaussview](https://gaussian.com/gaussview6/) (will try to support other programs), [RASPA](https://www.iraspa.org/RASPA/index.html), [iRASPA](https://www.iraspa.org/iRASPA/index.html), [ase](https://wiki.fysik.dtu.dk/ase/)
+[Gaussview](https://gaussian.com/gaussview6/) or [Avogadro](https://avogadro.cc/), [RASPA](https://www.iraspa.org/RASPA/index.html), [iRASPA](https://www.iraspa.org/iRASPA/index.html), [ase](https://wiki.fysik.dtu.dk/ase/)
 
 ## To-Do
-Read other formats of the adsorbate structure file than Gaussview-PDB (as long as it has the connectivity info), flexible adsorbates (read OPLS/TraPPE from RASPA and assign bonds/angles/torsions), multiple adsorbates (need to let the adsorbates repel each other)
+Flexible adsorbates (read OPLS/TraPPE from RASPA and assign bonds/angles/torsions), multiple adsorbates (need to let the adsorbates repel each other)
 
 ## Documentation
 TBD

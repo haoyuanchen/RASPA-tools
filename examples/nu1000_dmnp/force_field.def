@@ -3,6 +3,6 @@
 # number of defined interactions
 1
 # type      type2       interaction
-O_Z Z0 lennard-jones 1000000.0  2.23
+O_Z0 Z0 lennard-jones 10000.0  2.23
 # mixing rules to overwrite
 0

@@ -1,6 +1,6 @@
 """
 about:
-convert Gaussview-generated pdb file to RASPA def file
+convert Gaussview/Avogadro-generated pdb file to RASPA def file
 also generates pseudo_atoms.def and force_field.def
 
 notes:
@@ -40,7 +40,10 @@ def conect2bond(ll):
 for i,l in enumerate(d):
     ll = l.strip().split()
     if ll[0] == 'HETATM' or ll[0] == 'ATOM':
-        atoms.append([ll[2],float(ll[4]),float(ll[5]),float(ll[6])])
+        if len(ll) == 8:  # Gaussview
+            atoms.append([ll[2],float(ll[4]),float(ll[5]),float(ll[6])])
+        elif len(ll) == 11:  # Avogadro
+            atoms.append([ll[2],float(ll[5]),float(ll[6]),float(ll[7])])
     elif ll[0] == 'CONECT':
         bs = conect2bond(ll)
         if len(bs):

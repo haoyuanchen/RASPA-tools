@@ -1,6 +1,6 @@
 Files you need to prepare:
 
-1. dmnp.pdb (draw in Gaussview, save as PDB file)
+1. dmnp.pdb (draw in Gaussview/Avogadro (dmnp_gview.pdb/dmnp_avg.pdb), save as PDB file)
 2. nu1000_modified.cif (change the label of the binding site atom to 'Z0')
 3. simulation.input (modify from simulation.input.template provided)
 
