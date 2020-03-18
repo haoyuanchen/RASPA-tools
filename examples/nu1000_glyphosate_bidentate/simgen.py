@@ -29,13 +29,13 @@ def unitcells(cifname,cutoff):
     cells = [1,1,1]
     if c.cell.orthorhombic:
         for i in range(3):
-            cells[i] = np.ceil(c.cell[i][i]/(2*cutoff))
+            cells[i] = np.ceil(2*cutoff/c.cell[i][i])
     else:
     # below is placeholder
     # will implement the MIC for triclinic later
     # https://pdfs.semanticscholar.org/a5bd/f949911c0d7333ffec488b0589e88cd722b6.pdf
         for i in range(3):
-            cells[i] = np.ceil(c.cell[i][i]/(2*cutoff))
+            cells[i] = np.ceil(2*cutoff/c.cell[i][i])
     return cells
 
 cells = unitcells(cifname,cutoff)

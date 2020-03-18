@@ -33,6 +33,6 @@ f.write('%s/bin/simulate simulation.input\n'%(raspa_dir))
 f.write('python cifgen.py %s %d\n'%(mof,ncifs)) 
 f.close()
 
-# comment this out if you want to look at the files before running
+# this will run MBAI
 os.system('mbai.sh')
 
