@@ -3,6 +3,10 @@ A quick way to add (big) adsorbate molecules on specified binding sites on MOFs 
 
 ![TOC](toc.png)
 
+## Publications that used MBAI
+
+First publication that used MBAI is published on JACS! [Drout et al. JACS, 2020](https://pubs.acs.org/doi/10.1021/jacs.0c04668). The example in examples/nu1000_glyphosate_bidentate is from this paper. 
+
 ## Quick Start
 Different from Andrew's approach in MAI (which is for adsorbates with <=3 atoms, AFAIK), the basic idea of MBAI is to use Monte Carlo (through RASPA) to guide the adsorbates to the binding sites you want, because systematic construction approach as in MAI might get untractable when the adsorbate is large. To make this work, super strong Lennard-Jones parameters are assigned to the pair(s) of atoms you want to bind.  Basically what you need to do is to **draw your adsorbate** in Gaussview/Avogadro and save as a PDB, **change the label of the binding site(s) on the MOF** to 'Z0' (if bidentate, change the other site to 'Z1') in the CIF file, then **modify the script mbai.py and run it**! For a quick start, please take a look at the examples I provided.
 
