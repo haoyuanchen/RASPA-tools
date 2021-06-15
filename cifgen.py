@@ -17,7 +17,13 @@ from ase import Atoms
 mofcif = sys.argv[1]
 ncifs = int(sys.argv[2])
 
-cmd = 'cp Movies/System_0/Movie_*_allcomponents.pdb ./frames.pdb'
+def newest(path):  #make sure to get the newest movie file
+    files = os.listdir(path)
+    paths = [os.path.join(path, basename) for basename in files if basename.endswith('allcomponents.pdb')]
+    return max(paths, key=os.path.getctime)
+
+newest_movie = newest('Movies/System_0')
+cmd = 'cp ' + newest_movie + ' ./frames.pdb'
 os.system(cmd)
 
 f = open('frames.pdb','r')
