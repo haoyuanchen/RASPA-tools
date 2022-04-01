@@ -1,0 +1,2 @@
+Implementation of LJ 12-6-4 potential in RASPA. The 'HYDRATED_ION_WATER' potential in RASPA does not work properly for some reasons.
+New potential is called "GENERIC2_HC" and works.
