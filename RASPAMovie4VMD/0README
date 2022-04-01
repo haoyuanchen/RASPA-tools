@@ -1,0 +1,3 @@
+VMD cannot handle trajectory with varying number of atoms, which is inconvenient for GCMC simulations.
+This script creates additional adsorbates that overlap with others to solve this problem.
+It makes the Movie_*component*.pdb file (trajectory) generated in RASPA GCMC simulations visualizable in VMD.
