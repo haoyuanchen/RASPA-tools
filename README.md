@@ -1,2 +1,2 @@
 # RASPA-tools
-A collection of tools I created related to the molecular simulations package RASPA.
+A collection of tools I created for the molecular simulation package RASPA.
