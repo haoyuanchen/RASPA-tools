@@ -1,3 +1,20 @@
 Implementation of LJ 12-6-4 potential in RASPA. The 'HYDRATED_ION_WATER' potential in RASPA does not work properly for some reasons.
 New potential is called "GENERIC2_HC" and works.
 Just copy all the .c and .h files to the src directory in RASPA and re-compile. You may want to backup the original files first.
+
+To use the 12-6-4 potential, if the parameters in LJ1264.pair looks like:
+
+Mg         OwTIP3P                             A           B   C
+
+you should make your force_field.def file like:
+
+# rules to overwrite
+0
+# number of defined interactions
+1
+# type      type2       interaction
+Mg_         Ow          GENERIC2_HC     0  0  C  B  0  -A
+# mixing rules to overwrite
+0
+
+and force_field_mixing_rules.def should remain unchanged.
