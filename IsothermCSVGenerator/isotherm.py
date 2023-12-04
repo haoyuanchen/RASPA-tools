@@ -27,30 +27,34 @@ f.close()
 cmd = "rm uptake_raw"
 os.system(cmd)
 
-ps = []
-us = []
+ps = []  # pressure
+us = []  # loading
+es = []  # stdev
 
 for l in d:
     ll = l.strip().split()
     p = float(ll[0].split("_")[-1].replace(".data:",""))
     u = float(ll[-4])
+    e = float(ll[-2])
     ps.append(p)
     us.append(u)
+    es.append(e)
 
 ps = sorted(ps)
 us = sorted(us)
+es = sorted(es)
 
 f = open("isotherm.csv", 'w')
 if uni == 'mg_per_g':
-    f.write("Pressure(Pa),Uptake(mg/g)\n")
+    f.write("Pressure(Pa),Uptake(mg/g),StandardDeviation(mg/g)\n")
 elif uni == 'mmol_per_g':
-    f.write("Pressure(Pa),Uptake(mmol/g)\n")
+    f.write("Pressure(Pa),Uptake(mmol/g),StandardDeviation(mmol/g)\n")
 elif uni == 'ml_per_g':
-    f.write("Pressure(Pa),Uptake(ml/g)\n")
+    f.write("Pressure(Pa),Uptake(ml/g),StandardDeviation(ml/g)\n")
 elif uni == 'ml_per_ml':
-    f.write("Pressure(Pa),Uptake(ml/ml)\n")
+    f.write("Pressure(Pa),Uptake(ml/ml),StandardDeviation(ml/ml)\n")
 for i in range(len(ps)):
-    f.write("%f,%f\n"%(ps[i],us[i]))
+    f.write("%f,%f,%f\n"%(ps[i],us[i],es[i]))
 f.close()
 
 
